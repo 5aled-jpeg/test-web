@@ -222,3 +222,174 @@ body {
     background-color: rgba(0, 113, 227, 0.05);
     transform: scale(1.02);
 }
+
+/* Product Detail Page */
+.product-detail-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 140px 20px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.product-gallery {
+    flex: 1;
+    min-width: 300px;
+    /* Important for 3D tilt */
+    transform-style: preserve-3d;
+}
+
+.product-gallery img {
+    width: 100%;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateZ(30px);
+}
+
+.product-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price-tag {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 16px 0;
+    color: var(--color-text-primary);
+}
+
+.size-selector {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0 32px 0;
+}
+
+.size-btn {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+}
+
+.size-btn:hover {
+    border-color: var(--color-text-primary);
+}
+
+.size-btn.active {
+    border-color: var(--color-text-primary);
+    box-shadow: 0 0 0 1px var(--color-text-primary);
+}
+
+.add-to-bag {
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+    border-radius: 14px;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* Glassmorphism Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    padding: 40px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--color-text-primary);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+    background-color: #fff;
+}

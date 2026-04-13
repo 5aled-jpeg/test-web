@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars - Classic Biker Jacket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="global-nav">
+        <a href="index.html">Stars</a>
+        <a href="index.html">Store</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Essentials</a>
+        <a href="#">Pro Leather</a>
+        <a href="#">Support</a>
+    </nav>
+
+    <main class="product-detail-layout">
+        <div class="product-gallery animate-up" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+            <img src="card_jacket_1.png" alt="Stars Classic Biker Jacket">
+        </div>
+        
+        <div class="product-info animate-up">
+            <h2 class="heading-2" style="color: var(--color-accent); margin-bottom: 8px;">NEW</h2>
+            <h1 class="heading-1" style="text-align: left; font-size: 40px; margin-bottom: 8px; background: none; -webkit-text-fill-color: var(--color-text-primary);">Stars Classic Biker</h1>
+            <div class="price-tag">3000 Da</div>
+            <p class="body-text" style="font-size: 17px; margin-bottom: 24px;">
+                Expertly crafted from our proprietary full-grain calfskin leather. 
+                The clean, minimal design makes it an absolute perfection for your daily rotation. 
+                Classic structure meets modern luxury outerwear.
+            </p>
+
+            <h3 class="heading-2" style="color: var(--color-text-primary); font-size: 12px; margin-top: 12px;">SIZE</h3>
+            <div class="size-selector">
+                <button class="size-btn">S</button>
+                <button class="size-btn active">M</button>
+                <button class="size-btn">L</button>
+                <button class="size-btn">XL</button>
+            </div>
+
+            <a href="#" class="primary-button add-to-bag" style="text-align: center; margin-top: 16px;">Add to Bag</a>
+            
+            <p class="body-text" style="font-size: 13px; text-align: center; margin-top: 16px;">Free delivery within 48 hours in Algeria.</p>
+        </div>
+    </main>
+
+    <!-- Glassmorphism Order Modal -->
+    <div id="order-modal" class="modal-overlay">
+        <div class="modal-content animate-up">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <h2 class="heading-3" style="font-size: 24px; margin-bottom: 24px;">Complete Your Order</h2>
+            <form id="order-form">
+                <!-- Subject line for the email -->
+                <input type="hidden" name="_subject" value="NEW ORDER received!">
+                <!-- Anti-spam honeypot -->
+                <input type="text" name="_honey" style="display:none">
+                
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="Customer_Name" required placeholder="John Doe">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="Phone_Number" required placeholder="0555 12 34 56">
+                </div>
+                <div class="input-group">
+                    <label for="location">City / Location</label>
+                    <input type="text" id="location" name="City_Location" required placeholder="Algiers">
+                </div>
+                <button type="submit" class="primary-button" style="width: 100%; margin-top: 16px;">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
