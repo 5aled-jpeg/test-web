@@ -147,12 +147,14 @@ body {
     margin: 0 auto;
 }
 
+/* VanillaTilt handles the product-card hover rotation */
 .product-card {
     background: var(--color-bg-secondary);
     border-radius: 24px;
-    padding: 48px;
+    padding: 48px 32px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.02);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Removed custom transform transition to let VanillaTilt handle it */
+    transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,11 +163,18 @@ body {
     min-width: 300px;
     max-width: 480px;
     border: 1px solid rgba(0,0,0,0.02);
+    
+    /* VERY IMPORTANT FOR 3D POP-OUT EFFECT */
+    transform-style: preserve-3d;
 }
 
 .product-card:hover {
-    transform: scale(1.02) translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12); /* Boost elevation on hover */
+}
+
+/* This targets everything inside the card and pops it towards the camera like an Apple Watch screen */
+.product-card > * {
+    transform: translateZ(40px);
 }
 
 /* Buttons */
